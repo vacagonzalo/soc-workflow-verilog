@@ -1,7 +1,8 @@
 PROJECTS := \
 	01-hello \
 	02-greater \
-	03-decoder
+	03-decoder \
+	04-adder
 
 .PHONY: all clean $(PROJECTS)
 
