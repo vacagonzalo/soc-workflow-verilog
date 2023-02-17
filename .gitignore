@@ -1,5 +1,7 @@
 *.vcd
 *.vvp
+*.xml
+sim_build/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

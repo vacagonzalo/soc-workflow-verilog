@@ -3,7 +3,8 @@ PROJECTS := \
 	02-greater \
 	03-decoder \
 	04-adder \
-	05-flipflop
+	05-flipflop \
+	06-flipflop_en
 
 .PHONY: all clean $(PROJECTS)
 
