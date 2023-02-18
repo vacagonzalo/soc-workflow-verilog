@@ -1,6 +1,7 @@
 *.vcd
 *.vvp
 *.xml
+.svlangserver/
 sim_build/
 
 # Byte-compiled / optimized / DLL files
