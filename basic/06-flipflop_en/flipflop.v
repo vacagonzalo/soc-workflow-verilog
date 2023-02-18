@@ -5,11 +5,11 @@ module flipflop(
     input D,
     output reg Q);
 
-    always @(posedge CLK, SRST) begin
+    always @(posedge CLK or posedge SRST) begin
         if(SRST)
-            Q = 0;
+            Q <= 0;
         else if (EN)
-            Q = D;
+            Q <= D;
     end
 
 `ifdef COCOTB_SIM
