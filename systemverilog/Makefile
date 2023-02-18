@@ -1,5 +1,6 @@
 PROJECTS := \
-	01-mux
+	01-mux \
+	02-debouncer
 
 .PHONY: all clean $(PROJECTS)
 
