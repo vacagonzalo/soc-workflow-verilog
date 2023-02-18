@@ -10,36 +10,36 @@ module debouncer #(
 
     enum logic [1:0]{UP, FALLING, DOWN, RISING} state;
 
-    always @(posedge clk or rst) begin
+    always @(posedge clk or posedge rst) begin
         if(rst) begin
-            state = UP;
-            o = 1'b0;
+            state <= UP;
+            o <= 1'b0;
 
         end else if(en) begin
             case (state)
                 UP: begin
                     if(i == PRESSED)
-                        state = FALLING;
+                        state <= FALLING;
                 end
 
                 FALLING: begin
                     if(i == PRESSED) begin
-                        state = DOWN;
-                        o = 1'b1;
+                        state <= DOWN;
+                        o <= 1'b1;
                     end else
-                        state = UP;
+                        state <= UP;
                 end
 
                 DOWN: begin
-                    if(i == RELEASED) state = RISING;
+                    if(i == RELEASED) state <= RISING;
                 end
 
                 RISING: begin
                     if(i == RELEASED) begin
-                        state = UP;
-                        o = 1'b0;
+                        state <= UP;
+                        o <= 1'b0;
                     end else
-                        state = DOWN;
+                        state <= DOWN;
                 end
 
             endcase
